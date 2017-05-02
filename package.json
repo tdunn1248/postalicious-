@@ -5,10 +5,22 @@
   "version": "0.0.0",
   "dependencies": {
     "express": "~4.15.2",
-    "pug": "~2.0.0-beta11"
+    "pug": "~2.0.0-beta11",
+    "node": "~v7.7.2",
+    "bower": "~1.8.0",
+    "http": "~0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdunn1248/postalicious-.git"
+  },
+  "authors":"thomas and aaron",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tdunn1248/postalicious-/issues"
   },
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "nodemon app.js",
     "lint" : "#"
   },
   "devDependencies": {
