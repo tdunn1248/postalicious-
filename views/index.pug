@@ -1,4 +1,48 @@
-extends layout.pug
+//- extends layout.pug
+//- 
+//- block content
+//-   p= message
 
-block content
-  p= message
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='stylesheet', href='../css/stylePostalicious.css')
+    title Document
+  body
+    h1.topHeader Postalicious
+    .topContainer
+      button.requestBtn Build Request
+      |  
+      button.sendBtn Build &amp; Send
+      |  
+      input
+      | method 
+      input
+      | host
+      .queryPara
+        h5 Query Parameters
+        |  
+        input(placeholder='qp1')
+        |  
+        input(placeholder='qp2')
+        |  
+        input(placeholder='qp3')
+      .headers
+        h5 Headers
+        |  
+        input(placeholder='header1')
+        |  
+        input(placeholder='header2')
+        |  
+        input(placeholder='header3')
+      |  
+      input
+      | Body
+    .reqResBody
+      .request
+        h1 Request
+      .response
+        h1 Respond

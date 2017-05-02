@@ -10,40 +10,81 @@
 <body>
   <h1 class='topHeader'>Postalicious</h1>
   <div class='topContainer'>
-    <button class = 'requestBtn'>Build Request</button>
-    <button class= 'sendBtn'>Build & Send</button>
-    <input>method</input>
-    <input>host</input>
+    <div class='method'>
+      <form action='' method='get'>
 
+        <label for='GET-method'>Method</label>
+        <input id='GET-method' type='text' placeholder='GET 'name='method'>
+      </form>
+      <form action='' method='get'>
+        <label for='GET-method'>Host</label>
+        <input id='GET-method' type='text' name='method'>
+      </form>
+    </div>
     <div class= 'queryPara'>
-      <h5>Query Parameters</h2>
-      <input placeholder='qp1'></input>
-      <input placeholder='qp2'></input>
-      <input placeholder='qp3'></input>
+      <form action ='' method='get'>
+        <h5>Query Parameters</h5>
+        <div class='qpBlock'>
+          <input class= 'key' placeholder='key'></input>
+          <input class= 'value' placeholder='qp1'></input>
+        </div>
+        <div class='qpBlock'>
+          <input class= 'key' placeholder='key'></input>
+          <input class= 'value' placeholder='qp2'></input>
+        </div>
+        <div class='qpBlock'>
+          <input class= 'key' placeholder='key'></input>
+          <input class= 'value' placeholder='qp3'></input>
+        </div>
+      <form>
     </div>
 
     <div class= 'headers'>
-      <h5>Headers</h2>
-      <input placeholder='header1'></input>
-      <input placeholder='header2'></input>
-      <input placeholder='header3'></input>
+      <form action ='' method='get'>
+        <h5>Headers</h5>
+        <div class='qpBlock'>
+          <input class= 'key' placeholder='key'></input>
+          <input class= 'value' placeholder='header1'></input>
+        </div>
+        <div class='qpBlock'>
+          <input class= 'key' placeholder='key'></input>
+          <input class= 'value' placeholder='header2'></input>
+        </div>
+        <div class='qpBlock'>
+          <input class= 'key' placeholder='key'></input>
+          <input class= 'value' placeholder='header3'></input>
+        </div>
+      <form>
 
     </div>
 
-    <input>Body</input>
+    <form action='' method='get'>
+      <h5>Body</h5>
+      <input class='bodyBox'type="text"></input>
+    </form>
   </div>
+
   <div class='reqResBody'>
+
     <div class='request'>
-
+      <button class = 'requestBtn'>Build Request</button>
       <h1>Request</h1>
-
     </div>
+
     <div class='response'>
-
-      <h1>Respond</h1>
-
+      <button class= 'sendBtn'>Build & Send</button>
+      <h1>Response</h1>
     </div>
   </div>
+  <div class= 'formBody' >
+    <form action='' method='get' class='form'>
+      <input class='formBody'type="text" >
+    </form>
 
+    <form class='form' action='' method='get'>
+      <input class='formBody'type="text" >
+    </form>
+
+  </div>
 </body>
 </html>
