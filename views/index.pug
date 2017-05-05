@@ -12,52 +12,37 @@ html(lang='en')
     h1.topHeader Postalicious
     .topContainer
       .method
-        form( method='POST' action='/request/build' )
-          label(for='methodInput') Method
-          input#methodInput(type='text', placeholder='GET', name='method')
-          label(for='hostInput') Host
-          input#hostInput(type='text', name='host')
-          input( type="submit" value="Build Request" )
-          
-      .queryPara(<h5='')
-        | Query Parameters
-        .qpBlock
-          input.keyPara(placeholder='key')
-          |  
-          input.valuePara(placeholder='value')
-        .qpBlock
-          input.keyPara(placeholder='key')
-          |  
-          input.valuePara(placeholder='value')
-        .qpBlock
-          input.keyPara(placeholder='key')
-          |  
-          input.valuePara(placeholder='value')
-      .headers
-        h5 Headers
-        .qpBlock
-          input.keyHead(placeholder='key')
-          |  
-          input.valueHead(placeholder='value')
-        .qpBlock
-          input.keyHead(placeholder='key')
-          |  
-          input.valueHead(placeholder='value')
-        .qpBlock
-          input.keyHead(placeholder='key')
-          |  
-          input.valueHead(placeholder='value')
-      h5 Body
-      |  
-      input.bodyBox(type='text')
+        label(for='methodInput') Method
+        input#methodInput(type='text', placeholder='GET', name='method')
+        label(for='hostInput') Host
+        input#hostInput(type='text', name='host')
+      .qpBlock
+        label(for='qParameters') Query Parameters
+        input#qpKey1.qParams.keyPara(type='text', placeholder='key', name='qpKey1')
+        input#qpValue1.qParams.valuePara(type='text', placeholder='value', name='qpValue1')
+        input#qpKey2.qParams.keyPara(type='text', placeholder='key', name='qpKey2')
+        input#qpValue2.qParams.valuePara(type='text', placeholder='value', name='qpValue2')
+        input#qpKey3.qParams.keyPara(type='text', placeholder='key', name='qpKey3')
+        input#qpValue3.qParams.valuePara(type='text', placeholder='value', name='qpValue3')
+      .qpBlock
+        label(for='qParameters') Headers
+        input#headKey1.headers.keyPara(type='text', placeholder='key', name='headKey1')
+        input#headValue1.headers.valuePara(type='text', placeholder='value', name='headValue1')
+        input#headKey2.headers.keyPara(type='text', placeholder='key', name='headKey2')
+        input#headValue2.headers.valuePara(type='text', placeholder='value', name='headValue2')
+        input#headKey3.headers.keyPara(type='text', placeholder='key', name='headKey3')
+        input#headValue3.headers.valuePara(type='text', placeholder='value', name='headValue3')
+      .qpBlock
+        label(for='qParameters') Body
+        input.bodyBox(type="text", name='inputBody')
+  
     .reqResBody
       .request
         button.requestBtn(onclick= 'buildRequest()') Build Request
         h1 Request
-      .response
-        button.sendBtn(onclick= funk1) Build &amp; Send
-        h1 Response
-    .formBody
-      textarea.formBody.reqBody(type= 'text' ).value= reqBody
-      textarea.formBody.resBody(type='text').value= resBody
     
+    .formBody
+      textarea.formBody.response-header.reqBody(type= 'text').value= reqBody 
+      h1 Response
+        input.sendBtn(type='submit', onclick="build()", action='/request/build', method='POST') 
+        textarea.formBody.resBody(type='text').value= resBody

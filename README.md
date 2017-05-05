@@ -95,18 +95,18 @@ If that all sounds like ancient Greek to you, never fear. If you take it one ste
   - [x] Request builder HTML form
   - [x] Raw HTTP request
   - [x] Raw HTTP response
-- [x] When a user fills out the HTML form and clicks a "Send" button...
-  - [x] A raw HTTP request is generated and shown
-  - [x] An HTTP request is sent using the form data provided, and the raw response message is shown
-- [ ] Users can fill out an HTML form to specify HTTP request details.
+- [ ] When a user fills out the HTML form and clicks a "Send" button...
+  - [ ] A raw HTTP request is generated and shown
+  - [ ] An HTTP request is sent using the form data provided, and the raw response message is shown
+- [x] Users can fill out an HTML form to specify HTTP request details.
 - [ ] Submitting the form will send the request according to the specified details.
-- [ ] Requests are made from the server, not from the browser (this is to avoid [CORS issues](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)).
-- [ ] Using the HTML form, users can specify...
-  - [ ] host and path
-  - [ ] HTTP verb/method
-  - [ ] query parameter keys + values
-  - [ ] header keys + values
-  - [ ] request body
+- [x] Requests are made from the server, not from the browser (this is to avoid [CORS issues](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)).
+- [x] Using the HTML form, users can specify...
+  - [x] host and path
+  - [x] HTTP verb/method
+  - [x] query parameter keys + values
+  - [x] header keys + values
+  - [x] request body
 - [x] Repository includes a README file with basic installation and setup instructions.
 - [x] All dependencies are properly declared in `package.json`.
 - [x] All major features are added via pull requests with a clear description and concise commit messages.

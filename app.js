@@ -1,38 +1,28 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const router = express.Router()
-const http = require('http')
 const request = require('request')
-
-// Instantiate app
 const app = express()
 
-// const path = require('path') ?
 app.set('view engine', 'pug')
-
-//configure middleware
 app.use(express.static(__dirname + '/public'))
-app.use(bodyParser())
+app.use(bodyParser.json())
 
-// initial render of you home page
 app.get('/', function(req, res) {
-  res.render('index', { message: 'Hello' })
-})
-// wassup world
-app.get('/send', function(req, res) {
-  res.send('hello world')
+  res.render('index')
 })
 
-// endpoint for buidling a HTTP request
-app.post( '/request/build', function( req, res ) {
+app.post('/request/build', function(req, res) {
+  // request info from external server
+  // get the host from the fetch
   let bod;
-  const url = req.body.host
-  res.send({ reqBody: JSON.stringify(req.body), reqBody: reqBody })
+  request(req.body.host, function(error, res, body) {
+    // return the info from external server to your front end
+    bod = body
+  })
+  res.render('index', {reqBody: JSON.stringify(bod)})
   res.redirect('/')
 })
 
-
-//http.createServer()
 app.listen(3001, function() {
-  console.log('Example app listening on port 3000!!!!')
+  console.log('Example app listening on port 3001!!!!')
 })
