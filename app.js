@@ -1,30 +1,51 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
+const router = express.Router()
 const http = require('http')
-const pug = require('pug')
+const request = require('request')
+const beauty = require('pug-beautify')
+// const path = require('path')
 
-// fs.appendFile('html/index.html', (err) =>{
-//   if (err) throw err;
-//   console.log('The ')
-// })
 
-// const router = app.Router()
+app.use(express.static(__dirname + '/public'))
+app.set('view engine', beauty('pug'))
+app.use(bodyParser())
+//app.use(bodyParser().JSON())
 
-// const compilePug = pug.render('index.html')
-// console.log(pug);
-// console.log(app)
-// console.log(http)
-// app.set('views', 'html/index.html')
-
-app.set('view engine', 'pug')
-app.set('views', './views')
-
+// initial render of you home page
 app.get('/', function(req, res) {
-  res.render( 'index', { title: 'hello pug world', message: 'hi' })
-  // res.sendFile(__dirname + '/index.html')
-  // , {title: 'hey', message: 'hello there!'}
+  res.render('index', { message: 'Hello' })
 })
 
-app.listen(3000, function() {
+// endpoint for buidling a HTTP request
+app.post( '/request/build', function( req, res ) {
+  let bod;
+  const url = req.body.host
+  request(url , (error, response, body) => {
+    bod = body
+  })
+  res.render('index', { reqBody: JSON.stringify(req.body), resBody: bod })
+  res.redirect('/')
+})
+
+//how to connect html or how to ge the host and post into request?
+//how to post all info into text area?
+
+//post to database
+//respond with the head and the body?
+app.post('/send', function(req, res) {
+  res.send('hello world')
+
+  // const host = req.body.host
+  // const method = req.body.method
+  // request(host).pipe(res.send)
+  // res.send(req.body)
+  // console.log(req.body)
+  // res.redirect('/')
+})
+
+//http.createServer()
+app.listen(3001, function() {
   console.log('Example app listening on port 3000!!!!')
 })

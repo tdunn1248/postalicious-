@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/stylePostalicious.css">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class='topHeader'>Postalicious</h1>
+  <div class='topContainer'>
+    <div class='method'>
+      <form>
+
+        <label for='methodInput'>Method</label>
+        <input id='methodInput' type='text' placeholder='GET' name='method'>
+
+        <label for='hostInput'>Host</label>
+        <input id='hostInput' type='text' name='host'>
+      </form>
+
+    </div>
+    <div class= 'queryPara'
+        <h5>Query Parameters</h5>
+        <div class='qpBlock'>
+<!--Name?-->
+          <input class= 'keyPara' placeholder='key'>
+          <input class= 'valuePara' placeholder='value'>
+        </div>
+        <div class='qpBlock'>
+          <input class= 'keyPara' placeholder='key'>
+          <input class= 'valuePara' placeholder='value'>
+        </div>
+        <div class='qpBlock'>
+          <input class= 'keyPara' placeholder='key'>
+          <input class= 'valuePara' placeholder='value'>
+        </div>
+    </div>
+    <div class= 'headers'>
+        <h5>Headers</h5>
+        <div class='qpBlock'>
+          <input class= 'keyHead' placeholder='key'>
+          <input class= 'valueHead' placeholder='value'>
+        </div>
+        <div class='qpBlock'>
+          <input class= 'keyHead' placeholder='key'>
+          <input class= 'valueHead' placeholder='value'>
+        </div>
+        <div class='qpBlock'>
+          <input class= 'keyHead' placeholder='key'>
+          <input class= 'valueHead' placeholder='value'>
+        </div>
+    </div>
+      <h5>Body</h5>
+      <input class='bodyBox'type="text">
+  </div>
+  <div class='reqResBody'>
+    <div class='request'>
+      <button class = 'requestBtn' onclick= 'buildRequest()'>Build Request</button>
+      <h1>Request</h1>
+    </div>
+    <div class='response'>
+      <button class= 'sendBtn' onclick= 'buildSend()'>Build & Send</button>
+      <h1>Response</h1>
+    </div>
+  </div>
+  <div class= 'formBody'>
+      <textarea class='formBody reqBody' type="text" ></textarea>
+      <textarea class='formBody resBody' type="text" ></textarea>
+  <!-- </form> -->
+
+  </div>
+
+  <script src="main.js"></script>
+  <script src="../app.js"></script>
+
+</body>
+</html>

@@ -1,48 +1,63 @@
-//- extends layout.pug
-//- 
-//- block content
-//-   p= message
-
 doctype html
 html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    link(rel='stylesheet', href='../css/stylePostalicious.css')
+    link(rel='stylesheet', href='css/stylePostalicious.css')
     title Document
+    script(src='main.js')
   body
+    h1 #{message}
     h1.topHeader Postalicious
     .topContainer
-      button.requestBtn Build Request
-      |  
-      button.sendBtn Build &amp; Send
-      |  
-      input
-      | method 
-      input
-      | host
-      .queryPara
-        h5 Query Parameters
-        |  
-        input(placeholder='qp1')
-        |  
-        input(placeholder='qp2')
-        |  
-        input(placeholder='qp3')
+      .method
+        form( method='POST' action='/request/build' )
+          label(for='methodInput') Method
+          input#methodInput(type='text', placeholder='GET', name='method')
+          label(for='hostInput') Host
+          input#hostInput(type='text', name='host')
+          input( type="submit" value="Build Request" )
+          
+      .queryPara(<h5='')
+        | Query Parameters
+        .qpBlock
+          input.keyPara(placeholder='key')
+          |  
+          input.valuePara(placeholder='value')
+        .qpBlock
+          input.keyPara(placeholder='key')
+          |  
+          input.valuePara(placeholder='value')
+        .qpBlock
+          input.keyPara(placeholder='key')
+          |  
+          input.valuePara(placeholder='value')
       .headers
         h5 Headers
-        |  
-        input(placeholder='header1')
-        |  
-        input(placeholder='header2')
-        |  
-        input(placeholder='header3')
+        .qpBlock
+          input.keyHead(placeholder='key')
+          |  
+          input.valueHead(placeholder='value')
+        .qpBlock
+          input.keyHead(placeholder='key')
+          |  
+          input.valueHead(placeholder='value')
+        .qpBlock
+          input.keyHead(placeholder='key')
+          |  
+          input.valueHead(placeholder='value')
+      h5 Body
       |  
-      input
-      | Body
+      input.bodyBox(type='text')
     .reqResBody
       .request
+        button.requestBtn(onclick= 'buildRequest()') Build Request
         h1 Request
       .response
-        h1 Respond
+        button.sendBtn(onclick= funk1) Build &amp; Send
+        h1 Response
+    .formBody
+      textarea.formBody.reqBody(type= 'text').value= reqBody
+      textarea.formBody.resBody(type='text').value= resBody
+    
