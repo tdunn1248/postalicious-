@@ -1,0 +1,48 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='stylesheet', href='css/stylePostalicious.css')
+    title Document
+    script(src='main.js')
+  body
+    h1 #{message}
+    h1.topHeader Postalicious
+    .topContainer
+      .method
+        label(for='methodInput') Method
+        input#methodInput(type='text', placeholder='GET', name='method')
+        label(for='hostInput') Host
+        input#hostInput(type='text', name='host')
+      .qpBlock
+        label(for='qParameters') Query Parameters
+        input#qpKey1.qParams.keyPara(type='text', placeholder='key', name='qpKey1')
+        input#qpValue1.qParams.valuePara(type='text', placeholder='value', name='qpValue1')
+        input#qpKey2.qParams.keyPara(type='text', placeholder='key', name='qpKey2')
+        input#qpValue2.qParams.valuePara(type='text', placeholder='value', name='qpValue2')
+        input#qpKey3.qParams.keyPara(type='text', placeholder='key', name='qpKey3')
+        input#qpValue3.qParams.valuePara(type='text', placeholder='value', name='qpValue3')
+      .qpBlock
+        label(for='qParameters') Headers
+        input#headKey1.headers.keyPara(type='text', placeholder='key', name='headKey1')
+        input#headValue1.headers.valuePara(type='text', placeholder='value', name='headValue1')
+        input#headKey2.headers.keyPara(type='text', placeholder='key', name='headKey2')
+        input#headValue2.headers.valuePara(type='text', placeholder='value', name='headValue2')
+        input#headKey3.headers.keyPara(type='text', placeholder='key', name='headKey3')
+        input#headValue3.headers.valuePara(type='text', placeholder='value', name='headValue3')
+      .qpBlock
+        label(for='qParameters') Body
+        input.bodyBox(type="text", name='inputBody')
+  
+    .reqResBody
+      .request
+        button.requestBtn(onclick= 'buildRequest()') Build Request
+        h1 Request
+    
+    .formBody
+      textarea.formBody.response-header.reqBody(type= 'text').value= reqBody 
+      h1 Response
+        input.sendBtn(type='submit', onclick="build()", action='/request/build', method='POST') 
+        textarea.formBody.resBody(type='text').value= resBody

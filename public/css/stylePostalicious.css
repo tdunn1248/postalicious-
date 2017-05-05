@@ -1,0 +1,80 @@
+html {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: scroll;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.topHeader {
+  width: 100%;
+  height: 12%;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: space-between;
+}
+
+.topContainer {
+  width: 100%;
+  height: 12%;
+  border: solid;
+  display: flex;
+}
+.method {
+  width: 25%;
+  padding: 10px;
+}
+.queryPara {
+  width: 25%;
+  height: 12%;
+  padding: 10px;
+  border: 2px solid blue;
+}
+
+.headers {
+  width: 25%;
+  height: 12%;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.reqResBody {
+  width: 100%;
+  height: 60%;
+  display: flex;
+}
+.request {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  border: 2px solid black;
+  text-align: center;
+
+}
+.form {
+  width: 50%;
+}
+
+.form .formBody{
+  width: 100%;
+  height: 1000%;
+  border: 4px solid black;
+}
+
+.response {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.formBody {
+  display: flex;
+  width: 100%;
+  height: 200px;
+}
